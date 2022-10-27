@@ -1,26 +1,72 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Thin.woff2") format("woff2");
+        font-weight: 200;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Light.woff2") format("woff2");
+        font-weight: 300;
+    }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Regular.woff2") format("woff2");
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Regular.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Medium.woff2") format("woff2");
+        font-weight: 500;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-SemiBold.woff2") format("woff2");
+        font-weight: 600;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Bold.woff2") format("woff2");
+        font-weight: 700;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Bold.woff2") format("woff2");
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-ExtraBold.woff2") format("woff2");
+        font-weight: 800;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-Black.woff2") format("woff2");
+        font-weight: 900;
+    }
+
+    @font-face {
+        font-family: "Thicccboi";
+        src: url("../fonts/THICCCBOI-ThicccAF.woff2");
+        font-weight: 950;
+    }
 }
