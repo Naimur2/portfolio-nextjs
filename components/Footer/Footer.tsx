@@ -35,7 +35,7 @@ export default function Footer() {
                 />
             </div>
             <div className="flex space-x-2  items-center justify-center mt-4">
-                <p className="text-xs text-white">
+                <p className="text-xs text-white text-center">
                     @naimur_rahaman || All right reserved || {currentYear}
                 </p>
             </div>

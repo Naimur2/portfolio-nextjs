@@ -15,9 +15,16 @@ module.exports = {
                 1: "1px",
             },
             boxShadow: {
-                large: "10px 10px 0px #000000",
-                medium: "7px 7px 0px #000000",
-                small: "3px 3px 0px #000000",
+                large: "10px 10px 0px #171717",
+                medium: "7px 7px 0px #171717",
+                small: "3px 4px 0px #171717",
+              
+            },
+            fontSize:{
+                h1:"4rem",
+                h2:"3.5rem",
+                h3:"2.5rem",
+                
             },
             colors: {
                 primary: {
@@ -25,9 +32,22 @@ module.exports = {
                 },
                 secondary: {
                     100: "#FFF152",
+                    200:"#FFC107"
+                },
+                tertiary: {
+                    100: "#1ED0EF",
                 },
                 gray:{
+                    50:"#FAFAFA",
+                    100:"#F5F5F5",
+                    200:"#E5E5E5",
+                    300:"#D4D4D4",
+                    400:"#A3A3A3",
+                    500:"#737373",
                     600:"#525252",
+                    700:"#404040",
+                    800:"#262626",
+                    900:"#171717"
                 }
             },
         },

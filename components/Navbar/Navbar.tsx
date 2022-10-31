@@ -23,23 +23,23 @@ export default function Navbar() {
         },
         {
             name: "About me",
-            path: "/about",
+            path: "#about",
         },
         {
             name: "Projects",
-            path: "/projects",
+            path: "#projects",
         },
         {
             name: "Services",
-            path: "/services",
+            path: "#services",
         },
         {
             name: "Blog",
-            path: "/blog",
+            path: "#blog",
         },
         {
             name: "Contact",
-            path: "/contact",
+            path: "#contact",
         },
     ];
 
@@ -91,13 +91,15 @@ export default function Navbar() {
                                 </li>
                             ))}
                         </ul>
-                        <button
-                            className="p-2 block border-1 border-black bg-secondary-100 font-bold mt-2
-                hover:shadow-small active:shadow-small w-full
-                "
-                        >
-                            Contact me
-                        </button>
+                        <div className="mx-1">
+                            <button
+                                className="p-2 block border-1 border-gray-900 bg-secondary-100 font-bold mt-2
+                                            hover:shadow-small active:shadow-small w-full
+                                            "
+                            >
+                                Contact me
+                            </button>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
