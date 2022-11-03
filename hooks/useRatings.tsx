@@ -6,6 +6,7 @@ interface IRatingsHook {
 interface IRatingsArray {
     key: number;
     rating: number;
+    value: number;
 }
 
 export default function useRatings({

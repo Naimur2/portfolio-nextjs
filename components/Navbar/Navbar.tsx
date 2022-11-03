@@ -44,7 +44,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="px-4 grid grid-cols-2 sticky top-0 left-0 right-0 bg-white">
+        <nav className="px-4 grid grid-cols-2 sticky top-0 left-0 right-0 bg-white z-[100]">
             <div className="flex items-center">
                 <Image
                     alt="Naim."
@@ -93,7 +93,7 @@ export default function Navbar() {
                         </ul>
                         <div className="mx-1">
                             <button
-                                className="p-2 block border-1 border-gray-900 bg-secondary-100 font-bold mt-2
+                                className="p-2 transition-all ease-in-out block border-1 border-gray-900 bg-secondary-100 font-bold mt-2
                                             hover:shadow-small active:shadow-small w-full
                                             "
                             >

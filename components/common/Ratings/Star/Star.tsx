@@ -1,7 +1,7 @@
 import { BsStar, BsStarFill, BsStarHalf, IconName } from "react-icons/bs";
 
 interface IStarProps {
-    state: "full" | "half" | "empty";
+    state?: "full" | "half" | "empty";
     size: number;
     color?: string;
     className?: string;

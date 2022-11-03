@@ -1,3 +1,5 @@
+import { IncrementDecrement } from "./types";
+
 export interface ISocialIconProps {
     icon: React.ReactNode;
     href: string;
@@ -5,9 +7,17 @@ export interface ISocialIconProps {
 }
 
 export interface IReviewCardProps {
-    id?: string;
+    id?: string | number;
     text: string;
     name: string;
     company?: string;
     ratings: number;
+    active?: boolean;
+    animationType?: "left" | "right";
+}
+
+export interface IStrengthsProps {
+    title: string;
+    description: string;
+    image: string;
 }
