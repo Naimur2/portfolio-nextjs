@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        @apply scrollbar-hide;
+    }
     @font-face {
         font-family: "Thicccboi";
         src: url("../fonts/THICCCBOI-Thin.woff2") format("woff2");

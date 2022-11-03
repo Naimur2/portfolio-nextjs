@@ -8,8 +8,8 @@ function ReviewCard(
 ) {
     const inactiveClassName =
         animationType === "left"
-            ? "translate-x-[1000px]"
-            : "translate-x-[-1000px]";
+            ? "translate-x-[10000px]"
+            : "translate-x-[-10000px]";
     return (
         <div
             className={`p-4 h-full flex flex-col justify-between absolute top-0
