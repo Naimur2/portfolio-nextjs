@@ -6,7 +6,7 @@ import SectionHeader from "../common/SectionHeader/SectionHeader";
 
 export default function Contact() {
     return (
-        <section className="px-4 py-10 grid gap-7">
+        <section className="px-4 py-10 grid gap-7" id="contact">
             <div className="grid gap-5">
                 <SectionHeader
                     title="Try a better way to contact with me to solve your desire

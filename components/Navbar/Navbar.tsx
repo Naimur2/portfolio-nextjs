@@ -1,108 +1,94 @@
-import Hamburger from "hamburger-react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { INavLinkProps } from "../../typescript/interfaces";
+import { TScreens } from "../../typescript/types";
 import { screens } from "../../utils/constants";
-import { motion, AnimatePresence } from "framer-motion";
+import NavBrand from "./NavBrand/NavBrand";
+import NavLinks from "./NavLinks/NavLinks";
+import Navtoggler from "./Navtoggler/Navtoggler";
+import Sidenav from "./SideNav/SideNav";
+
+const navLinks: INavLinkProps[] = [
+    {
+        text: "Home",
+        href: "/",
+    },
+    {
+        text: "About me",
+        href: "#about",
+    },
+    {
+        text: "Projects",
+        href: "#projects",
+    },
+    {
+        text: "Services",
+        href: "#services",
+    },
+    {
+        text: "Blog",
+        href: "#blog",
+    },
+    {
+        text: "Contact Me",
+        href: "#contact",
+    },
+];
 
 export default function Navbar() {
     const router = useRouter();
+
     const mediumDevice = useMediaQuery(screens.md);
+    const largeDevice = useMediaQuery(screens.lg);
+    const [currentDevice, setCurrentDevice] = React.useState<
+        TScreens | undefined
+    >();
+
+    const [isLargeDevice, setIsLargeDevice] = React.useState(false);
 
     const [isOpen, setOpen] = React.useState(false);
 
     React.useEffect(() => {
-        setOpen(!mediumDevice ? isOpen : true);
-    }, [mediumDevice, isOpen]);
+        setIsLargeDevice(largeDevice);
+    }, [mediumDevice, largeDevice]);
 
-    const navLinks = [
-        {
-            name: "Home",
-            path: "/",
-        },
-        {
-            name: "About me",
-            path: "#about",
-        },
-        {
-            name: "Projects",
-            path: "#projects",
-        },
-        {
-            name: "Services",
-            path: "#services",
-        },
-        {
-            name: "Blog",
-            path: "#blog",
-        },
-        {
-            name: "Contact",
-            path: "#contact",
-        },
-    ];
+    React.useEffect(() => {
+        if (largeDevice) {
+            setCurrentDevice("lg");
+        } else if (mediumDevice) {
+            setCurrentDevice("md");
+        } else {
+            setCurrentDevice("sm");
+        }
+    }, [largeDevice, mediumDevice]);
 
     return (
-        <nav className="px-4 grid grid-cols-2 sticky top-0 left-0 right-0 bg-white z-[100]">
-            <div className="flex items-center">
-                <Image
-                    alt="Naim."
-                    src={"/svg/icon.svg"}
-                    width={50}
-                    height={35}
-                    className=""
+        <header className="sticky top-0 left-0 right-0 z-[100] bg-white">
+            <nav className="container flex justify-between ">
+                <NavBrand
+                    logo="/svg/icon.svg"
+                    name="Naim."
+                    device={currentDevice}
                 />
-            </div>
 
-            <div className=" flex justify-end md:hidden">
-                <Hamburger
-                    toggled={isOpen}
-                    toggle={() => setOpen((prev) => !prev)}
-                    size={20}
-                />
-            </div>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        className={`col-span-2 transition-all duration-100 origin-top ease-in-out 
-                     bg-white left-0 right-0 top-8 py-2 overflow-hidden`}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{
-                            height: "auto",
-                            opacity: 0,
-                        }}
-                        transition={{ duration: 0.2, type: "spring" }}
-                    >
-                        <ul>
-                            {navLinks.map((link, index) => (
-                                <li
-                                    key={index}
-                                    className="p-2
-                             hover:bg-purple-100 active:hover:bg-light-700 text-gray-600
-                             hover:text-primary-100 active:text-primary-100
-                             font-medium hover:font-bold active:font-bold
-                             transition-all duration-300 ease-in-out
-                             cursor-pointer text-center"
-                                    onClick={() => router?.push(link.path)}
-                                >
-                                    {link?.name}
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="mx-1">
-                            <button
-                                className="p-2 transition-all ease-in-out block border-1 border-gray-900 bg-secondary-100 font-bold mt-2
-                                            hover:shadow-small active:shadow-small w-full
-                                            "
-                            >
-                                Contact me
-                            </button>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </nav>
+                {!isLargeDevice ? (
+                    <Navtoggler
+                        isOpen={isOpen}
+                        onToggle={() => setOpen((prev) => !prev)}
+                    />
+                ) : null}
+
+                {isLargeDevice ? <NavLinks links={navLinks} /> : null}
+                {!isLargeDevice ? (
+                    <Sidenav
+                        isOpen={isOpen}
+                        onClose={() => setOpen((prev) => !prev)}
+                        navLinks={navLinks}
+                        devices={currentDevice}
+                    />
+                ) : null}
+            </nav>
+        </header>
     );
 }

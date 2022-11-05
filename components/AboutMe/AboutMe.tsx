@@ -5,8 +5,15 @@ import Strengths from "./Strengths/Strengths";
 
 export default function AboutMe() {
     return (
-        <section className="px-4 py-20 grid gap-14">
-            <div className="text-center grid gap-4 items-center content-center">
+        <section
+            id="about"
+            className="px-4 py-20 grid gap-14 container lg:grid-cols-2 lg:gap-20 lg:py-40"
+        >
+            <div
+                className="text-center lg:text-start grid gap-8  
+             content-center lg:content-start 
+             lg:col-start-2 justify-items-center lg:justify-items-start mx-auto max-w-lg lg:gap-10"
+            >
                 <h4>I am an expert web developer based in BD</h4>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -17,11 +24,12 @@ export default function AboutMe() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sit, dolor!
                 </p>
-                <div className="flex justify-center">
-                    <PrimaryButton>Hire Me</PrimaryButton>
-                </div>
+
+                <PrimaryButton className="justify-center">
+                    Hire Me
+                </PrimaryButton>
             </div>
-            <div className="grid gap-4">
+            <div className="flex flex-col space-y-6 items-center justify-center lg:col-start-1 lg:row-start-1">
                 <Strengths
                     image="/svg/web-developer.svg"
                     title="Web Development"

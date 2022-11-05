@@ -18,7 +18,7 @@ export default function Ratings({
     });
 
     return (
-        <div className={"grid grid-cols-[repeat(5,18px)]" + " " + className}>
+        <div className={`grid grid-cols-[repeat(5,18px)] ${className || ""}`}>
             {ratingsValues.map((rat) => {
                 const isHalfStar = rat.value === 0.5;
 
@@ -28,8 +28,7 @@ export default function Ratings({
                     <Star
                         key={rat.key}
                         state={rat.value === 0 ? "empty" : state}
-                        size={14}
-                        className={"text-secondary-200" + " " + starClassName}
+                        className={`star ${starClassName || ""}`}
                         {...starProps}
                     />
                 );

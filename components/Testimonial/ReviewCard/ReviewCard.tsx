@@ -8,13 +8,13 @@ function ReviewCard(
 ) {
     const inactiveClassName =
         animationType === "left"
-            ? "translate-x-[10000px]"
-            : "translate-x-[-10000px]";
+            ? "translate-x-[10000px] opacity-0"
+            : "translate-x-[-10000px] opacity-0";
     return (
         <div
             className={`p-4 h-full flex flex-col justify-between absolute top-0
             left-0 w-full transition-all duration-500 ease-in-out -z-10
-            ${active ? "translate-x-0 z-10" : inactiveClassName}`}
+            ${active ? "translate-x-0 z-10 opacity-100" : inactiveClassName}`}
             ref={ref}
         >
             <p className="text-xl text-gray-700 max-w-[200ch] overflow-hidden">

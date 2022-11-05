@@ -1,7 +1,8 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import * as ReactDOM from "react-dom";
 import { MdClose } from "react-icons/md";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import Portal from "../Portal/Portal";
 import AcionSheetItem from "./ActionSheetItem/AcionSheetItem";
 
 export default function ActionSheet() {
@@ -29,46 +30,39 @@ export default function ActionSheet() {
                 <RiArrowDropDownLine size={18} />
             </button>
             {isOpen ? (
-                <ActionSheetContainer>
-                    <div
-                        onClick={() => setIsOpen(false)}
-                        className="bg-black h-screen w-screen fixed z-[1000] opacity-70"
-                    />
-                    <div className="bg-white rounded-t-xl w-full h-[calc(100%-7rem)] bottom-0 fixed z-[10001]">
-                        <div className="px-4 py-4 flex justify-between items-center border-b-1 border-gray-300">
-                            <span className="font-bold text-blue-900">
-                                Select Categories
-                            </span>
-                            <MdClose
-                                size={24}
-                                onClick={() => setIsOpen(false)}
-                            />
-                        </div>
-                        <div className="h-full pb-16">
-                            <ul className="h-full overflow-scroll scrollbar-hide">
-                                <AcionSheetItem>Website</AcionSheetItem>
-                            </ul>
-                        </div>
-                    </div>
-                </ActionSheetContainer>
+                <AnimatePresence>
+                    <Portal containerId="action-sheet-container">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 0.7 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
+                            className="bg-black h-screen w-screen fixed z-[1000] opacity-70"
+                        />
+                        <motion.div
+                            initial={{ translateY: 100000 }}
+                            animate={{ translateY: 0 }}
+                            exit={{ translateY: 100000 }}
+                            className="bg-white rounded-t-xl w-full h-[calc(100%-7rem)] bottom-0 fixed z-[10001]"
+                        >
+                            <div className="px-4 py-4 flex justify-between items-center border-b-1 border-gray-300">
+                                <span className="font-bold text-blue-900">
+                                    Select Categories
+                                </span>
+                                <MdClose
+                                    size={24}
+                                    onClick={() => setIsOpen(false)}
+                                />
+                            </div>
+                            <div className="h-full pb-16">
+                                <ul className="h-full overflow-scroll scrollbar-hide">
+                                    <AcionSheetItem>Website</AcionSheetItem>
+                                </ul>
+                            </div>
+                        </motion.div>
+                    </Portal>
+                </AnimatePresence>
             ) : null}
         </div>
     );
 }
-
-const ActionSheetContainer = ({ children }: { children: React.ReactNode }) => {
-    const [isMounted, setIsMounted] = React.useState(false);
-
-    React.useEffect(() => {
-        setIsMounted(true);
-        return () => setIsMounted(false);
-    }, []);
-
-    if (isMounted) {
-        return ReactDOM.createPortal(
-            children,
-            document.getElementById("action-sheet-container") as HTMLElement
-        );
-    }
-    return null;
-};

@@ -1,5 +1,5 @@
-import { IncrementDecrement } from "./types";
 import React from "react";
+import { TScreens } from "./types";
 
 export interface ISocialIconProps {
     icon: React.ReactNode;
@@ -41,4 +41,14 @@ export interface IActionSheetItemProps {
     children: React.ReactNode;
     onClick: () => void;
     isCheck?: boolean;
+}
+
+export interface INavLinkProps {
+    href: string;
+    text: string;
+}
+
+export interface IDeviceContext {
+    device: TScreens | null;
+    setDevice: (device: TScreens) => void;
 }

@@ -15,8 +15,8 @@ export default function ScrollViewProduct({
     onTagClick,
 }: IScrollViewProductProps) {
     return (
-        <li className="first:pl-4 last:pr-4">
-            <div className="border-1 border-black min-w-[18rem]">
+        <li className="first:pl-4 last:pr-4 lg:first:pl-0 lg:last:pr-0">
+            <div className="border-1 border-black min-w-[18rem] lg:min-w-fit">
                 <div className="pt-4 px-4 bg-[#DAD4CD] h-56 overflow-hidden">
                     <Image
                         alt="user-portfolio"
@@ -29,7 +29,7 @@ export default function ScrollViewProduct({
                 </div>
                 <div className="p-4 grid gap-5">
                     <div className="grid gap-3">
-                        <h5 className="h-12 overflow-hidden">
+                        <h5 className="h-12 overflow-hidden md:h-16">
                             {title?.trim()}
                         </h5>
                         <p className="text-sm text-gray-600 text-justify h-[4rem] overflow-hidden">

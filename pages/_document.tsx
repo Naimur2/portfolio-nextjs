@@ -6,6 +6,7 @@ export default function Document() {
             <Head />
             <body>
                 <div id="action-sheet-container"></div>
+                <div id="side-nav"></div>
                 <Main />
                 <NextScript />
             </body>

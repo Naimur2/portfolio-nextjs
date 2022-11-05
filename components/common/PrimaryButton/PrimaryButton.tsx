@@ -15,11 +15,7 @@ export default function PrimaryButton({
 }: PrimaryButtonProps) {
     return (
         <button
-            className={
-                "bg-secondary-100 min-w-[7rem] transition-all ease-in font-bold py-3 px-5 shadow-medium hover:shadow-none focus:shadow-none  text-sm" +
-                " " +
-                className
-            }
+            className={`primary-button ${className ?? ""}`}
             onClick={onClick}
             {...rest}
         >
