@@ -3,6 +3,7 @@ import { IDeviceContext } from "../../typescript/interfaces";
 
 const DeviceContext = React.createContext<IDeviceContext>({
     device: null,
+    screenSize: null,
     setDevice: () => {},
 });
 

@@ -14,7 +14,9 @@ export default function AboutMe() {
              content-center lg:content-start 
              lg:col-start-2 justify-items-center lg:justify-items-start mx-auto max-w-lg lg:gap-10"
             >
-                <h4>I am an expert web developer based in BD</h4>
+                <h4 className="max-w-[24ch]">
+                    I am an expert web developer based in BD
+                </h4>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Debitis deleniti, dignissimos impedit suscipit quae hic

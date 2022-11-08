@@ -28,9 +28,9 @@ export default function ContactButton({
                     alt={alt || "details"}
                 />
             </div>
-            <div className="grid">
+            <div className="flex flex-col space-y-2">
                 <h5>{title}</h5>
-                <p className="text-sm font-medium text-gray-500 break-all">
+                <p className="text-sm lg:text-xl font-medium text-gray-500 break-all">
                     {subtitle}
                 </p>
             </div>

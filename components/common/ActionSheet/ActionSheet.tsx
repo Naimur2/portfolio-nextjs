@@ -21,7 +21,7 @@ export default function ActionSheet() {
     }, [isOpen]);
 
     return (
-        <div>
+        <div className="max-w-sm mx-auto w-full">
             <button
                 onClick={() => setIsOpen(true)}
                 className="border-1 border-black w-full p-2 rounded-sm flex items-center justify-between"

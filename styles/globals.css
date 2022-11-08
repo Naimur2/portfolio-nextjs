@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        @apply scroll-smooth;
+    }
     body {
-        @apply scrollbar-hide scroll-smooth;
+        @apply scrollbar-hide;
     }
     @font-face {
         font-family: "Thicccboi";
@@ -102,9 +105,9 @@
         @apply text-base md:text-xl text-gray-900;
     }
     .container {
-        @apply px-4 md:py-2   
-        md:max-w-[calc(100%-7rem)] lg:max-w-[calc(100%-12rem)]
-         xl:max-w-[calc(100%-20rem)] 2xl:max-w-[calc(100%-26rem)] mx-auto;
+        @apply px-4 md:py-2   mx-auto;
+        /* md:max-w-[calc(100%-7rem)] lg:max-w-[calc(100%-16rem)]
+         xl:max-w-[calc(100%-24rem)] 2xl:max-w-5xl mx-auto; */
     }
     .primary-button {
         @apply bg-secondary-100 min-w-[7rem]

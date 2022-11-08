@@ -1,37 +1,33 @@
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import PrimaryButton from "../common/PrimaryButton/PrimaryButton";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import ScrollViewProduct from "../common/ScrollViewProduct/ScrollViewProduct";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import ActionSheet from "../common/ActionSheet/ActionSheet";
+import { useEffect, useRef } from "react";
+import useCurrentDevice from "../../hooks/useCurrentDevice";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { screens } from "../../utils/constants";
+import { devices, screens } from "../../utils/constants";
+import ActionSheet from "../common/ActionSheet/ActionSheet";
+import PrimaryButton from "../common/PrimaryButton/PrimaryButton";
+import ScrollViewProduct from "../common/ScrollViewProduct/ScrollViewProduct";
 
 export default function MyProjects() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const largeDevice = useMediaQuery(screens.lg);
-    const [windowWidth, setWindowWidth] = useState(0);
-
-    const horizontalScroll = (e: WheelEvent) => {
-        e.preventDefault();
-        const race = 300; // How many pixels to scroll
-        if (scrollRef.current) {
-            if (e.deltaY > 0)
-                // Scroll right
-                scrollRef.current.scrollLeft += race;
-            // Scroll left
-            else scrollRef.current.scrollLeft -= race;
-        }
-    };
-
-    const handleWindowResize = (e: Event) => {
-        const windowWidth = window.innerWidth;
-        setWindowWidth(windowWidth);
-    };
-    console.log(windowWidth);
+    const [screenName, screenSize] = useCurrentDevice();
+    console.log({ screenName, screenSize });
+    console.log(screenSize && screenSize >= devices.lg);
 
     useEffect(() => {
+        const horizontalScroll = (e: WheelEvent) => {
+            if (screenSize && screenSize >= devices.lg) return;
+            else {
+                e.preventDefault();
+                const race = 300; // How many pixels to scroll
+                if (scrollRef.current) {
+                    if (e.deltaY > 0)
+                        // Scroll right
+                        scrollRef.current.scrollLeft += race;
+                    // Scroll left
+                    else scrollRef.current.scrollLeft -= race;
+                }
+            }
+        };
         const horizontalScrollar = scrollRef.current;
         if (horizontalScrollar) {
             horizontalScrollar?.addEventListener("wheel", horizontalScroll);
@@ -43,30 +39,23 @@ export default function MyProjects() {
                 );
             };
         }
-    }, []);
+    }, [screenSize]);
 
-    useEffect(() => {
-        if (window) {
-            window.addEventListener("resize", handleWindowResize);
-            setWindowWidth(window.innerWidth);
-
-            return () => {
-                window.removeEventListener("resize", handleWindowResize);
-            };
-        }
-    }, []);
     const text = `Lorem ipsum dolor sit, amet ipsum dolor sit amet
     consectetur adipisicing`;
 
     return (
-        <section className=" py-14 grid gap-8 lg:container" id="projects">
+        <section
+            className="py-20 lg:py-24 grid gap-8 lg:container lg:max-w-none"
+            id="projects"
+        >
             <div className="px-4 grid gap-8 pb-5">
                 <h4 className="text-center">My Projects</h4>
                 <ActionSheet />
             </div>
             <div
                 ref={scrollRef}
-                className={`overflow-scroll scrollbar-hide scroll-smooth lg:overflow-hidden`}
+                className={`overflow-scroll scrollbar-hide xl:max-w-[65rem] lg:mx-auto scroll-smooth lg:overflow-hidden`}
             >
                 <ul
                     className="flex flex-row space-x-5

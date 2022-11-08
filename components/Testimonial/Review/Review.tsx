@@ -24,7 +24,7 @@ export default function Review({ reviews }: { reviews: IReviewCardProps[] }) {
     };
 
     return (
-        <>
+        <div>
             <ReviewBox>
                 {reviews.map((review, index) => (
                     <ReviewCard
@@ -57,6 +57,6 @@ export default function Review({ reviews }: { reviews: IReviewCardProps[] }) {
                     />
                 </button>
             </div>
-        </>
+        </div>
     );
 }

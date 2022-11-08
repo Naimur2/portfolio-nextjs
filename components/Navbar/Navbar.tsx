@@ -20,7 +20,7 @@ const navLinks: INavLinkProps[] = [
     },
     {
         text: "Projects",
-        href: "#projects",
+        href: "projects",
     },
     {
         text: "Services",

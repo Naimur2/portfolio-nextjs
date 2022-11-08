@@ -50,5 +50,6 @@ export interface INavLinkProps {
 
 export interface IDeviceContext {
     device: TScreens | null;
+    screenSize: number;
     setDevice: (device: TScreens) => void;
 }

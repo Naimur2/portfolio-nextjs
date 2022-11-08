@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
     return (
-        <Html>
+        <Html style={{ scrollBehavior: "smooth" }}>
             <Head />
             <body>
                 <div id="action-sheet-container"></div>
