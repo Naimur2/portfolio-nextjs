@@ -1,5 +1,4 @@
-import React from "react";
-import { ISocialIconProps } from "../../../typescript/interfaces";
+import { ISocialIconProps } from "../../../../typescript/interfaces";
 
 export default function SocialIcon({
     icon,

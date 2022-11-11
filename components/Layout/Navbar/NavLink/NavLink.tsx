@@ -18,7 +18,7 @@ export default function NavLink({
                 hover:text-primary-100 active:text-primary-100
                 font-medium hover:font-bold active:font-bold
                 transition-all duration-300 ease-in-out
-                cursor-pointer text-center md:min-w-[6rem] text-base xl:text-lg ${
+                cursor-pointer text-center md:min-w-[6rem] lg:min-w-[8rem]  text-base xl:text-lg ${
                     className || ""
                 }`}
             onClick={() => {

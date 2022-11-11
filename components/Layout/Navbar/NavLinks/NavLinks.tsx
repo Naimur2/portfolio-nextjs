@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { INavLinkProps } from "../../../typescript/interfaces";
-import PrimaryButton from "../../common/PrimaryButton/PrimaryButton";
+import { INavLinkProps } from "../../../../typescript/interfaces";
+import PrimaryButton from "../../../common/PrimaryButton/PrimaryButton";
 import NavLink from "../NavLink/NavLink";
 
 export default function NavLinks({ links }: { links: INavLinkProps[] }) {

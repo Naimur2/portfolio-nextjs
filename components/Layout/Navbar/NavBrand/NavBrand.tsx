@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TScreens } from "../../../typescript/types";
+import { TScreens } from "../../../../typescript/types";
 
 interface INAvBrandProps {
     logo?: string;

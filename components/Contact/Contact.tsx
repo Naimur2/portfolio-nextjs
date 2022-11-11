@@ -1,8 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import MessageButton from "./MessageButton/MessageButton";
-import ContactButton from "./ContactButton/ContactButton";
 import SectionHeader from "../common/SectionHeader/SectionHeader";
+import ContactButton from "./ContactButton/ContactButton";
+import MessageButton from "./MessageButton/MessageButton";
 
 export default function Contact() {
     return (

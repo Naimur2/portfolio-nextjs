@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import { INavLinkProps } from "../../../typescript/interfaces";
-import Portal from "../../common/Portal/Portal";
-import NavLink from "../NavLink/NavLink";
+import { INavLinkProps } from "../../../../typescript/interfaces";
+import { TScreens } from "../../../../typescript/types";
+import Portal from "../../../common/Portal/Portal";
 import NavBrand from "../NavBrand/NavBrand";
-import { TScreens } from "../../../typescript/types";
+import NavLink from "../NavLink/NavLink";
 
 interface SideNavProps {
     isOpen: boolean;

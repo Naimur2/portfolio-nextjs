@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import { INavLinkProps } from "../../typescript/interfaces";
-import { TScreens } from "../../typescript/types";
-import { screens } from "../../utils/constants";
+import useMediaQuery from "../../../hooks/useMediaQuery";
+import { INavLinkProps } from "../../../typescript/interfaces";
+import { TScreens } from "../../../typescript/types";
+import { screens } from "../../../utils/constants";
 import NavBrand from "./NavBrand/NavBrand";
 import NavLinks from "./NavLinks/NavLinks";
 import Navtoggler from "./Navtoggler/Navtoggler";
@@ -16,23 +16,23 @@ const navLinks: INavLinkProps[] = [
     },
     {
         text: "About me",
-        href: "#about",
+        href: "/about",
     },
     {
-        text: "Projects",
-        href: "projects",
+        text: "Show Case",
+        href: "/projects",
     },
-    {
-        text: "Services",
-        href: "#services",
-    },
-    {
-        text: "Blog",
-        href: "#blog",
-    },
+    // {
+    //     text: "Services",
+    //     href: "#services",
+    // },
+    // {
+    //     text: "Blog",
+    //     href: "#blog",
+    // },
     {
         text: "Contact Me",
-        href: "#contact",
+        href: "/contact",
     },
 ];
 

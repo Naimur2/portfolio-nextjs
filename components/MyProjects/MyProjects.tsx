@@ -8,10 +8,7 @@ import ScrollViewProduct from "../common/ScrollViewProduct/ScrollViewProduct";
 
 export default function MyProjects() {
     const scrollRef = useRef<HTMLDivElement>(null);
-    const largeDevice = useMediaQuery(screens.lg);
     const [screenName, screenSize] = useCurrentDevice();
-    console.log({ screenName, screenSize });
-    console.log(screenSize && screenSize >= devices.lg);
 
     useEffect(() => {
         const horizontalScroll = (e: WheelEvent) => {
