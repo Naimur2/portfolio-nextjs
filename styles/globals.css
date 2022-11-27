@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+    html,
+    body {
+        @apply w-full h-full text-gray-800;
+    }
+
+    #__next {
+        @apply w-full h-full grid grid-rows-[auto,1fr,auto];
+    }
     html {
         @apply scroll-smooth;
     }

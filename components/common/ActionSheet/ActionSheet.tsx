@@ -2,10 +2,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { MdClose } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { IActionSheet } from "../../../typescript/interfaces";
 import Portal from "../Portal/Portal";
 import AcionSheetItem from "./ActionSheetItem/AcionSheetItem";
 
-export default function ActionSheet() {
+export default function ActionSheet({
+    items,
+    onSelect,
+    selected,
+}: IActionSheet) {
     const [isOpen, setIsOpen] = React.useState(false);
 
     React.useEffect(() => {
@@ -56,7 +61,19 @@ export default function ActionSheet() {
                             </div>
                             <div className="h-full pb-16">
                                 <ul className="h-full overflow-scroll scrollbar-hide">
-                                    <AcionSheetItem>Website</AcionSheetItem>
+                                    {items?.map((item, index) => (
+                                        <AcionSheetItem
+                                            onClick={() => onSelect?.(item)}
+                                            key={index}
+                                            isCheck={
+                                                selected?.findIndex(
+                                                    (i) => i.id === item.id
+                                                ) !== -1
+                                            }
+                                        >
+                                            {item.title}
+                                        </AcionSheetItem>
+                                    ))}
                                 </ul>
                             </div>
                         </motion.div>

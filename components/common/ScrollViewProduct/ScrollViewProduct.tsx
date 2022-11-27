@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { IScrollViewProductProps } from "../../../typescript/interfaces";
+import { HScrollItem } from "../../HScroll/HScroll";
 import Tag from "./Tag/Tag";
 
 const DEFAULT_IMAGE = "images/fallback.jpg";
@@ -15,7 +16,7 @@ export default function ScrollViewProduct({
     onTagClick,
 }: IScrollViewProductProps) {
     return (
-        <li className="first:pl-4 last:pr-4 lg:first:pl-0 lg:last:pr-0">
+        <HScrollItem>
             <div className="border-1 border-black min-w-[18rem] lg:min-w-fit">
                 <div className="pt-4 px-4 bg-[#DAD4CD] h-56 overflow-hidden">
                     <Image
@@ -53,6 +54,6 @@ export default function ScrollViewProduct({
                     </div>
                 </div>
             </div>
-        </li>
+        </HScrollItem>
     );
 }

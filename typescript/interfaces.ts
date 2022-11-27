@@ -53,3 +53,26 @@ export interface IDeviceContext {
     screenSize: number;
     setDevice: (device: TScreens) => void;
 }
+
+export interface IUseWindowSize {
+    windowSize: number | undefined;
+    isGreaterThan: (size: TScreens) => boolean;
+    isLessThan: (size: TScreens) => boolean;
+    isBetween: (min: TScreens, max: TScreens) => boolean;
+    isBetweenOrEqual: (min: TScreens, max: TScreens) => boolean;
+    isGreaterThanEqual: (size: TScreens) => boolean;
+    isLessThanEqual: (size: TScreens) => boolean;
+    isEqual: (size: TScreens) => boolean;
+}
+
+export interface ICategory {
+    id: number;
+    title: string;
+    slug: string;
+}
+
+export interface IActionSheet {
+    items: ICategory[];
+    onSelect: (item: ICategory) => void;
+    selected: ICategory[];
+}
