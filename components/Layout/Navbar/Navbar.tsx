@@ -36,7 +36,7 @@ const navLinks: INavLinkProps[] = [
     },
 ];
 
-export default function Navbar() {
+function Navbar({}, ref) {
     const router = useRouter();
 
     const mediumDevice = useMediaQuery(screens.md);
@@ -64,7 +64,10 @@ export default function Navbar() {
     }, [largeDevice, mediumDevice]);
 
     return (
-        <header className="sticky top-0 left-0 right-0 z-[100] bg-white">
+        <header
+            ref={ref}
+            className="fixed top-0 left-0 right-0 z-[100] bg-white"
+        >
             <nav className="container flex justify-between ">
                 <NavBrand
                     logo="/svg/icon.svg"
@@ -92,3 +95,5 @@ export default function Navbar() {
         </header>
     );
 }
+
+export default React.forwardRef(Navbar);

@@ -76,3 +76,9 @@ export interface IActionSheet {
     onSelect: (item: ICategory) => void;
     selected: ICategory[];
 }
+
+export interface ISkillCardProps {
+    title: string;
+    skills: string[];
+    className?: string;
+}

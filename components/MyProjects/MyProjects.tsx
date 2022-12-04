@@ -103,19 +103,42 @@ export default function MyProjects() {
         }
     };
 
+    const isSelected = (item: ICategory) =>
+        selectedItems.find((i) => i.id === item.id);
+
     return (
         <section
-            className="py-20 lg:py-24 grid gap-8 lg:container lg:max-w-none"
+            className="py-20 lg:py-24 grid gap-8 lg:container "
             id="projects"
         >
             <div className="px-4 grid gap-8 pb-5">
-                <h4 className="text-center">My Projects</h4>
-                <ActionSheet
-                    items={categories}
-                    selected={selectedItems}
-                    onSelect={selectionhandler}
-                />
+                <h4 className="text-center">My Best Projects</h4>
+
+                {isLessThan("lg") ? (
+                    <ActionSheet
+                        items={categories}
+                        selected={selectedItems}
+                        onSelect={selectionhandler}
+                    />
+                ) : (
+                    <div className="flex gap-4 items-center flex-wrap justify-center">
+                        {categories.map((category, id) => (
+                            <button
+                                key={id}
+                                className={`filter-btn ${
+                                    isSelected(category)
+                                        ? "filter-btn-active"
+                                        : ""
+                                }`}
+                                onClick={() => selectionhandler(category)}
+                            >
+                                {category.title}
+                            </button>
+                        ))}
+                    </div>
+                )}
             </div>
+
             <HScroll>
                 <ScrollViewProduct
                     title="Lorem ipsum dhjhgkjghrtu ur5t5yrol"

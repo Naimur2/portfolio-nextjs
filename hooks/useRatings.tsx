@@ -5,7 +5,6 @@ interface IRatingsHook {
 
 interface IRatingsArray {
     key: number;
-    rating: number;
     value: number;
 }
 

@@ -4,7 +4,7 @@ import UserReviewHero from "../UserReviewHero/UserReviewHero";
 
 export default function ComputerImage() {
     return (
-        <div className="relative   lg:col-start-2 bg-hero-pattern py-4 md:py-20 bg-contain ">
+        <div className="relative  lg:col-start-2 bg-hero-pattern py-4 md:py-20 bg-contain ">
             <div
                 className="max-w-[22rem] mx-auto
      h-64 relative  mt-14 z-10 flex flex-col

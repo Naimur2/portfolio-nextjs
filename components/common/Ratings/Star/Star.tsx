@@ -10,7 +10,7 @@ interface IStarProps {
 export default function Star({
     state = "empty",
     size,
-    color,
+    color = "#FFC522",
     className,
 }: IStarProps) {
     const stars = {

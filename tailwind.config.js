@@ -14,6 +14,9 @@ module.exports = {
             backgroundImage: {
                 "hero-pattern": "url('/images/hero-pattern.png')",
             },
+            content:{
+                checkMark:"url('/svg/check-mark.svg')",
+            },
             borderWidth: {
                 1: "1px",
             },

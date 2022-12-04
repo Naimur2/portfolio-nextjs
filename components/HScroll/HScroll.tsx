@@ -48,11 +48,11 @@ export default function HScroll({ children }: HScrollItemProps) {
         <div
             ref={scrollRef}
             className={`overflow-scroll scrollbar-hide 
-    xl:max-w-[65rem] lg:mx-auto scroll-smooth lg:overflow-hidden`}
+    lg:container lg:mx-auto scroll-smooth lg:overflow-hidden`}
         >
             <ul
                 className="flex flex-row space-x-5
-     snap-both lg:grid lg:grid-cols-3 lg:gap-8 lg:space-x-0"
+     snap-both lg:grid lg:grid-cols-3 2xl:grid-cols-4 lg:gap-8 lg:space-x-0"
             >
                 {children}
             </ul>

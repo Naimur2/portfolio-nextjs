@@ -126,4 +126,10 @@
     .star {
         @apply text-secondary-200 text-sm;
     }
+    .filter-btn {
+        @apply px-3 py-2 border-1 border-black hover:shadow-small active:bg-yellow-200;
+    }
+    .filter-btn-active {
+        @apply shadow-small bg-yellow-200;
+    }
 }
