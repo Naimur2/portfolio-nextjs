@@ -1,78 +1,15 @@
-import { ISkillCardProps } from "../../typescript/interfaces";
+import skills from "../../content/skills";
 import SkillCard from "./SkillCard/SkillCard";
 
 export default function Skills() {
-    const skills: ISkillCardProps[] = [
-        {
-            title: "Languages",
-            skills: [
-                "JavaScript",
-                "TypeScript",
-                "HTML",
-                "CSS",
-                "Python",
-                "PHP",
-            ],
-        },
-        {
-            title: "Frontend Frameworks & Libraries",
-            skills: [
-                "React",
-                "Next.js",
-                "React Native",
-                "Tailwind CSS",
-                "Bootstrap",
-                "Bootstrap",
-                "Material UI",
-                "SASS",
-                "Styled Components",
-                "Flowbite",
-            ],
-        },
-        {
-            title: "Backend Frameworks & Libraries",
-            skills: [
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-                "MySQL",
-                "Firebase",
-                "Socket.io",
-                "GraphQL",
-                "Apollo",
-                "Sequelize",
-                "Mongoose",
-                "Jest",
-            ],
-        },
-        {
-            title: "Tools",
-            skills: [
-                "Git",
-                "GitHub",
-                "VS Code",
-                "Figma",
-                "Adobe XD",
-                "Photoshop",
-                "Illustrator",
-                "Android Studio",
-                "Xcode",
-            ],
-        },
-        {
-            title: "Other",
-            skills: ["Redux", "Redux Toolkit", "Tensorflow", "Keras"],
-        },
-    ];
-
     return (
         <section className=" bg-[#FFF152]">
             <div className="container px-4 mx-auto py-20 grid gap-14">
                 <h4 className="text-center">Skills &amp; Expertise</h4>
-                <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 auto-rows-fr">
+                <div className="flex  flex-wrap gap-y-8 items-stretch lg:mx-0 justify-center">
                     {skills.map((skill, index) => (
                         <SkillCard
-                            className="xl:last:col-start-2"
+                            className="xl:hover:scale-105 hover:shadow-lg transition-all w-full lg:w-[calc(50%-2rem)] 2xl:w-[calc(33%-2rem)] lg:!mx-0 lg:!mr-8 lg:!last:mr-0"
                             key={index}
                             {...skill}
                         />

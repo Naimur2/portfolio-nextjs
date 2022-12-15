@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { strengths } from "../../content/aboutme";
 import PrimaryButton from "../common/PrimaryButton/PrimaryButton";
 import Strengths from "./Strengths/Strengths";
 
@@ -31,22 +32,10 @@ export default function AboutMe() {
                     Hire Me
                 </PrimaryButton>
             </div>
-            <div className="flex flex-col space-y-6 items-center justify-center lg:col-start-1 lg:row-start-1">
-                <Strengths
-                    image="/svg/web-developer.svg"
-                    title="Web Development"
-                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolor!"
-                />
-                <Strengths
-                    image="/svg/web-developer.svg"
-                    title="Web Development"
-                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolor!"
-                />
-                <Strengths
-                    image="/svg/web-developer.svg"
-                    title="Web Development"
-                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolor!"
-                />
+            <div className="grid gap-6 items-center justify-center lg:col-start-1 lg:row-start-1">
+                {strengths.map((strength, index) => (
+                    <Strengths key={index} {...strength} />
+                ))}
             </div>
         </section>
     );

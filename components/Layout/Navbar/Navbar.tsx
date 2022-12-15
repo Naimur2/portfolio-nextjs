@@ -19,13 +19,14 @@ const navLinks: INavLinkProps[] = [
         href: "/about",
     },
     {
+        text: "Skills",
+        href: "#services",
+    },
+    {
         text: "Show Case",
         href: "/projects",
     },
-    // {
-    //     text: "Services",
-    //     href: "#services",
-    // },
+
     // {
     //     text: "Blog",
     //     href: "#blog",
