@@ -1,7 +1,3 @@
-import React from "react";
-import { BiCheckCircle } from "react-icons/bi";
-import TickMark from "./TickMark";
-
 export default function SkillItem({
     text,
     className,
@@ -11,10 +7,9 @@ export default function SkillItem({
 }) {
     return (
         <li
-            className={`flex flex-row items-center space-x-4 text-black ${className}`}
+            className={`border-1 border-black px-3 py-1 lg:px-4 lg:py-2 text-black ${className}`}
         >
-            <TickMark />
-            <span className="text-xl font-medium">{text}</span>
+            <span className="text-sm  lg:text-base font-medium">{text}</span>
         </li>
     );
 }

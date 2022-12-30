@@ -3,7 +3,7 @@ import { ISkillCardProps } from "../typescript/interfaces";
 const skills: ISkillCardProps[] = [
     {
         title: "Languages",
-        skills: ["JavaScript", "TypeScript", "HTML", "CSS", "Python", "PHP"],
+        skills: ["JavaScript", "TypeScript", "Python", "PHP", "JAVA"],
     },
     {
         title: "Frontend Frameworks & Libraries",
@@ -25,8 +25,6 @@ const skills: ISkillCardProps[] = [
         skills: [
             "Node.js",
             "Express.js",
-            "MongoDB",
-            "MySQL",
             "Firebase",
             "Socket.io",
             "GraphQL",
@@ -49,6 +47,10 @@ const skills: ISkillCardProps[] = [
             "Android Studio",
             "Xcode",
         ],
+    },
+    {
+        title: "Databases",
+        skills: ["MongoDB", "MySQL"],
     },
     {
         title: "Other",

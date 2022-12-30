@@ -28,13 +28,14 @@ export interface ITagProps {
     text: string;
 }
 
-export interface IScrollViewProductProps {
+export interface IProject {
     title: string;
     description: string;
     image: string;
     tags?: string[];
     onSeeMoreClick: () => void;
     onTagClick?: (tag: string) => void;
+    onClick?: () => void;
 }
 
 export interface IActionSheetItemProps {
@@ -66,7 +67,7 @@ export interface IUseWindowSize {
 }
 
 export interface ICategory {
-    id: number;
+    id?: number | string;
     title: string;
     slug: string;
 }
@@ -74,11 +75,16 @@ export interface ICategory {
 export interface IActionSheet {
     items: ICategory[];
     onSelect: (item: ICategory) => void;
-    selected: ICategory[];
+    selected: ICategory | null;
 }
 
 export interface ISkillCardProps {
     title: string;
     skills: string[];
     className?: string;
+}
+
+export interface IContextActions {
+    type: string;
+    payload: any;
 }

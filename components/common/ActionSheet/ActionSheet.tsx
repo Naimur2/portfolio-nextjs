@@ -31,7 +31,7 @@ export default function ActionSheet({
                 onClick={() => setIsOpen(true)}
                 className="border-1 border-black w-full p-2 rounded-sm flex items-center justify-between"
             >
-                <span>Website</span>
+                <span>{selected?.title || "Select Category"}</span>
                 <RiArrowDropDownLine size={18} />
             </button>
             {isOpen ? (
@@ -63,13 +63,12 @@ export default function ActionSheet({
                                 <ul className="h-full overflow-scroll scrollbar-hide">
                                     {items?.map((item, index) => (
                                         <AcionSheetItem
-                                            onClick={() => onSelect?.(item)}
-                                            key={index}
-                                            isCheck={
-                                                selected?.findIndex(
-                                                    (i) => i.id === item.id
-                                                ) !== -1
-                                            }
+                                            onClick={() => {
+                                                setIsOpen(false);
+                                                onSelect?.(item);
+                                            }}
+                                            key={index.toString() + item?.id}
+                                            isCheck={selected?.id === item?.id}
                                         >
                                             {item.title}
                                         </AcionSheetItem>
